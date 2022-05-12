@@ -20,8 +20,8 @@ export default function Card({title, release_date, vote_average, poster_path}) {
 }
 
 const CardDiv = styled.div`
-  min-height: 380px;
-  max-width: 150px;
+  max-width: 200px;
+  min-height: 450px;
   margin: 2rem;
   border: 1px solid #C3CFD9;
   position: relative;
@@ -52,8 +52,7 @@ const Like = styled(FaHeart)`
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: 225px;
+  max-width: 200px;
   object-fit: contain;
 `;
 
@@ -61,8 +60,7 @@ const Date = styled.span`
   text-align: center;
   color: #FFF;
   position: absolute;
-  bottom: 40%;
- 
+  bottom: 35%;
 `;
 
 const MovieTitle = styled.h3`
