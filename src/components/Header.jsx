@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FaHeart, FaShoppingCart } from "react-icons/fa";
+import { FaHeart, FaShoppingCart, FaSearch } from "react-icons/fa";
 import logo from "../img/M.png";
 
 export default function Header() {
@@ -9,7 +9,10 @@ export default function Header() {
       <Link href="#">
         <Image src={logo} alt="logo" />
       </Link>
-      <Input placeholder="Pesquisar" />
+      <InputDiv>
+        <SearchIcon />
+        <Input placeholder="Pesquisar" />
+      </InputDiv>
       <Icons>
         <Like />
         <Cart />
@@ -37,13 +40,27 @@ const Link = styled.a`
   line-height: 100%;
 `;
 
-const Input = styled.input`
+const InputDiv = styled.div`
+  display: inline-block;
   width: 30%;
+  position: relative;
+`
+
+const SearchIcon = styled(FaSearch)`
+  font-size: 1.5rem;
+  position: absolute;
+  right: -10px;
+  bottom: 5px;
+  color: #9eadba;
+
+  @media (max-width: 380px) {
+    display: none;
+  }
+`
+
+const Input = styled.input`
+  width: 100%;
   height: 30px;
-  background: url("https://cdn-icons.flaticon.com/png/512/2319/premium/2319177.png?token=exp=1652327685~hmac=7dd07072fb398b62e3ff5727aa795bb7")
-    no-repeat;
-  background-size: contain;
-  background-position: right;
   background-color: #fff;
   border: 2px solid #9eadba;
   border-radius: 0.2rem;
@@ -58,14 +75,10 @@ const Input = styled.input`
     color: #9eadba;
     font-size: 1rem;
   }
-
-  @media (max-width: 380px) {
-    background: none;
-    background-color: #fff;
-  }
-`;
+`
 
 const Icons = styled.div``;
+
 const Like = styled(FaHeart)`
   font-size: 1.5rem;
   margin-right: 1rem;
@@ -76,7 +89,8 @@ const Like = styled(FaHeart)`
   &:hover {
     color: #ff0000;
   }
-`;
+`
+
 const Cart = styled(FaShoppingCart)`
   font-size: 1.5rem;
   color: #fff;
@@ -86,4 +100,4 @@ const Cart = styled(FaShoppingCart)`
   &:hover {
     color: #000;
   }
-`;
+`

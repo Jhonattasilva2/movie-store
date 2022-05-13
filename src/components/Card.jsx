@@ -1,19 +1,24 @@
+import {useState} from 'react'
 import styled from "styled-components";
 import { FaHeart, FaStar } from "react-icons/fa";
 
-export default function Card({title, release_date, vote_average, poster_path}) {
-  const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/'
+export default function Card({title, release_date, vote_average, poster_path,}) {
+  const [like, setLike] = useState(false)
+  
 
   return (
     <CardDiv>
-      <Like/>
-      <Image src={IMG_PATH + poster_path} alt={title} />
+      <Like like={like} onClick={() => like === false ? setLike(true) : setLike(false)}/>
+      <Image
+        src={"https://image.tmdb.org/t/p/w1280/" + poster_path}
+        alt={title}
+      />
       <Date>{release_date}</Date>
       <MovieTitle>{title}</MovieTitle>
       <Info>
         <Star /> {vote_average} - Gênero
       </Info>
-      <Info> {`R$ ${Math.floor( Math.random() * 89 )},99`}</Info>
+      <Info> {`R$ ${Math.floor(Math.random() * 89)},99`}</Info>
       <Button>Adicionar</Button>
     </CardDiv>
   );
@@ -23,7 +28,7 @@ const CardDiv = styled.div`
   max-width: 200px;
   min-height: 450px;
   margin: 2rem;
-  border: 1px solid #C3CFD9;
+  border: 1px solid #c3cfd9;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -33,7 +38,7 @@ const CardDiv = styled.div`
   transition: all 0.4s;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 `;
 
@@ -41,13 +46,13 @@ const Like = styled(FaHeart)`
   position: absolute;
   top: 5px;
   right: 5px;
-  color: #4b5c6b;
+  color: ${(props) => props.like ? "#ff0000" : "#4b5c6b"};;
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.4s;
 
   &:hover {
-      color: #ff0000;
+    color: #ff0000;
   }
 `;
 
@@ -58,7 +63,7 @@ const Image = styled.img`
 
 const Date = styled.span`
   text-align: center;
-  color: #FFF;
+  color: #fff;
   position: absolute;
   bottom: 35%;
 `;
@@ -74,7 +79,6 @@ const Info = styled.span`
   justify-content: center;
   font-size: 0.9rem;
 `;
-
 
 const Star = styled(FaStar)`
   color: #4b5c6b;

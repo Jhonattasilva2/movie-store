@@ -1,55 +1,20 @@
 # MOVIE STORE
 
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Uma loja de filmes com os melhores e maiores sucesos da atualidade onde você compra e assiste do conforto da sua casa.
 
 
-## Table of contents
+## Tabela de conteúdo
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [O Desafio](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Meu processo](#my-process)
+  - [Criado com](#built-with)
+  - [O que eu aprendi](#what-i-learned)
+  - [Desenvolvimento continuo](#continued-development)
+- [Autor](#author)
+- [Agradecimentos](#acknowledgments)
 
 
 ## Overview
@@ -64,6 +29,7 @@ Os visitantes do site devem ser capazes de:
 - Ver o ícone de loading no fim da página.
 - Ter efeitos visuais ao passar o mouse sobre cada filme, botões e ícones.
 - Ver a responsividade do website em qualquer dispositivo móvel.
+- Dar like e deslike em cada filme conforme preferência.
 
 ### Screenshot
 
@@ -105,3 +71,38 @@ Mesmo após a avaliação do projeto pela DOT pretendo ainda continuar desenvolv
 
 Gostaria de agradecer a DOT pela oportunidade de criar este projeto com a oportunidade de uma vaga de Frontend Júnior mesmo com uma tecnologia diferente da pedida no desafio.
  
+
+ # Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
