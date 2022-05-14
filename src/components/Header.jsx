@@ -2,11 +2,12 @@ import SearchInput from "./SearchInput";
 import styled from "styled-components";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import logo from "../img/film-strip.png";
+import App from "../App";
 
 export default function Header() {
   return (
     <HeaderComponent>
-      <Link href="#">
+      <Link href={<App />}>
         <Image src={logo} alt="logo" />
       </Link>
       <SearchInput/>
