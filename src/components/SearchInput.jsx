@@ -4,16 +4,15 @@ import { useContext } from "react";
 import { ApiContext } from "../contexts/ApiContext";
 
 export default function SearchInput() {
-    const {searchTerm, SearchMovies, setValue} = useContext(ApiContext)
+    const { SearchMovies } = useContext(ApiContext)
 
   return (
     <InputForm onSubmit={SearchMovies}>
-      <SearchIcon />
       <Input
         placeholder="Pesquisar"
-        value={searchTerm}
-        onChange={setValue}
+        name='filme'
       />
+      <SearchIcon />
     </InputForm>
   );
 }
