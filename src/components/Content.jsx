@@ -8,8 +8,7 @@ export default function Content() {
 
     return (
         <Container>
-            {cardMovies.length > 0 &&
-                cardMovies.map((movie) => {
+            {cardMovies.map((movie) => {
                     return (
                     <Card key={movie.id} {...movie}  />
                 )})}

@@ -5,7 +5,7 @@ export const ApiContext = createContext()
 export function ApiContextProvider({ children }) {
     const [cardMovies, setCardMovies] = useState([])
     const [genres, setGenres] = useState([])
-
+    
     const API_URL =
         'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1'
     const SEARCH_API =
@@ -18,23 +18,19 @@ export function ApiContextProvider({ children }) {
         fetch(API_URL)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.results)
                 setCardMovies(data.results)
             })
-    }, [])
 
-    useEffect(() => {
-        fetch(API_GENRES)
-        .then(genre => genre.json())
-        .then(result => {
-            const genres = result.genres.reduce((genres,gen) => {
-                const { id, name } = gen
-                genres[id] = name
-                return genres
-            },[])
-            console.log(genres);
-            setGenres(genres)
-        })
+            fetch(API_GENRES)
+            .then((genre) => genre.json())
+            .then((result) => {
+                const genres = result.genres.reduce((genres, gen) => {
+                    const { id, name } = gen
+                    genres[id] = name
+                    return genres
+                }, [])
+                setGenres(genres)
+            })
     }, [])
 
     const SearchMovies = (e) => {
@@ -50,7 +46,7 @@ export function ApiContextProvider({ children }) {
     }
 
     return (
-        <ApiContext.Provider value={{ cardMovies, genres, SearchMovies }}>
+        <ApiContext.Provider value={{ cardMovies, genres, SearchMovies}}>
             {children}
         </ApiContext.Provider>
     )

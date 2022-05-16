@@ -3,14 +3,13 @@ import { ApiContext } from '../contexts/ApiContext'
 import { FaHeart, FaStar } from "react-icons/fa";
 import styled from "styled-components";
 
-
 export default function Card({title, release_date, vote_average, poster_path, genre_ids}) {
-  const [like, setLike] = useState(false)
   const {genres} = useContext(ApiContext)
+  const [like, setLike] = useState(false)
 
   return (
     <CardDiv>
-      <Like like={like} onClick={() => like === false ? setLike(true) : setLike(false)}/>
+      <Like like={like} onClick={()=> like === false ? setLike(true) : setLike(false)}/>
       <Image
         src={"https://image.tmdb.org/t/p/w1280/" + poster_path}
         alt={title}
@@ -52,7 +51,7 @@ const Like = styled(FaHeart)`
   position: absolute;
   top: 5px;
   right: 5px;
-  color: ${(props) => props.like ? "#ff0000" : "#4b5c6b"};;
+  color: ${(props) => props.like ? "#ff0000" : "#4b5c6b"};
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.4s;
@@ -105,4 +104,4 @@ const Button = styled.button`
   &:hover {
     background-color: #4f47bc;
   }
-`;
+`
