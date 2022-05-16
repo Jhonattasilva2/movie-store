@@ -4,7 +4,7 @@ import { FaHeart, FaStar } from "react-icons/fa";
 import styled from "styled-components";
 
 export default function Card({title, release_date, vote_average, poster_path, genre_ids}) {
-  const {genres} = useContext(ApiContext)
+  const {genres, addToCart} = useContext(ApiContext)
   const [like, setLike] = useState(false)
 
   return (
@@ -24,7 +24,7 @@ export default function Card({title, release_date, vote_average, poster_path, ge
                     }
       </Info>
       <Info> {`R$ ${Math.floor(Math.random() * 89)},99`}</Info>
-      <Button>Adicionar</Button>
+      <Button onClick={addToCart}>Adicionar</Button>
     </CardDiv>
   );
 }
@@ -59,7 +59,7 @@ const Like = styled(FaHeart)`
   &:hover {
     color: #ff0000;
   }
-`;
+`
 
 const Image = styled.img`
   max-width: 200px;
@@ -71,25 +71,25 @@ const Date = styled.span`
   color: #fff;
   position: absolute;
   bottom: 35%;
-`;
+`
 
 const MovieTitle = styled.h3`
   font-size: 1rem;
   margin-bottom: 0.2rem;
   text-align: center;
-`;
+`
 
 const Info = styled.span`
   display: flex;
   padding: 0 5px;
   justify-content: center;
   font-size: 0.9rem;
-`;
+`
 
 const Star = styled(FaStar)`
   color: #4b5c6b;
   margin-right: 0.2rem;
-`;
+`
 
 const Button = styled.button`
   width: 100%;

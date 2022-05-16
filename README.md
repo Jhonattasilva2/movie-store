@@ -25,12 +25,13 @@ Essa é uma loja de filmes online, onde o cliente tem acesso ao catálogo logo n
 
 Os visitantes do site devem ser capazes de:
 
-- Ver os 20 filmes com a maior bilheteria mundial atualmente.
+- Ver os 20 filmes mais assistidos mundialmente.
 - Pesquisar por filmes conforme digitado na barra de pesquisa.
+- Dar like e deslike em cada filme conforme preferência.
+- Ver o alerta aparecer no canto direito da página ao clicar no botão Adicionar em cada filme.
 - Ver o ícone de loading no fim da página.
 - Ter efeitos visuais ao passar o mouse sobre cada filme, botões e ícones.
 - Ver a responsividade do website em qualquer dispositivo móvel.
-- Dar like e deslike em cada filme conforme preferência.
 
 ### Screenshot
 

@@ -5,7 +5,8 @@ export const ApiContext = createContext()
 export function ApiContextProvider({ children }) {
     const [cardMovies, setCardMovies] = useState([])
     const [genres, setGenres] = useState([])
-    
+    const [alert, setAlert] = useState(false)
+
     const API_URL =
         'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1'
     const SEARCH_API =
@@ -21,7 +22,7 @@ export function ApiContextProvider({ children }) {
                 setCardMovies(data.results)
             })
 
-            fetch(API_GENRES)
+        fetch(API_GENRES)
             .then((genre) => genre.json())
             .then((result) => {
                 const genres = result.genres.reduce((genres, gen) => {
@@ -45,8 +46,18 @@ export function ApiContextProvider({ children }) {
         e.target.elements.filme.value = ''
     }
 
+    const addToCart = () => {
+        setAlert(true)
+
+        setTimeout(() => {
+            setAlert(false)
+        }, 3000)
+    }
+
     return (
-        <ApiContext.Provider value={{ cardMovies, genres, SearchMovies}}>
+        <ApiContext.Provider
+            value={{ cardMovies, genres, SearchMovies, addToCart, alert }}
+        >
             {children}
         </ApiContext.Provider>
     )

@@ -2,12 +2,14 @@ import React, { useContext } from 'react'
 import { ApiContext } from '../contexts/ApiContext'
 import styled from 'styled-components'
 import Card from './Card'
+import Alert from './Alert'
 
 export default function Content() {
-    const { cardMovies } = useContext(ApiContext)
+    const { cardMovies, alert } = useContext(ApiContext)
 
     return (
         <Container>
+            {alert && <Alert/>}
             {cardMovies.map((movie) => {
                     return (
                     <Card key={movie.id} {...movie}  />
@@ -22,4 +24,5 @@ const Container = styled.main`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
 `
