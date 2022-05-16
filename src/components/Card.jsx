@@ -1,10 +1,12 @@
-import {useState} from 'react'
-import styled from "styled-components";
+import {useState, useContext} from 'react'
+import { ApiContext } from '../contexts/ApiContext'
 import { FaHeart, FaStar } from "react-icons/fa";
+import styled from "styled-components";
 
-export default function Card({title, release_date, vote_average, poster_path,}) {
+
+export default function Card({title, release_date, vote_average, poster_path, genre_ids}) {
   const [like, setLike] = useState(false)
-  
+  const {genres} = useContext(ApiContext)
 
   return (
     <CardDiv>
@@ -16,7 +18,11 @@ export default function Card({title, release_date, vote_average, poster_path,}) 
       <Date>{release_date}</Date>
       <MovieTitle>{title}</MovieTitle>
       <Info>
-        <Star /> {vote_average} - Gênero
+        <Star /> {vote_average} - {
+                        genre_ids.map(id => {
+                            return <Info>{genres[id]}</Info>
+                        }).slice(0,1)
+                    }
       </Info>
       <Info> {`R$ ${Math.floor(Math.random() * 89)},99`}</Info>
       <Button>Adicionar</Button>
@@ -76,6 +82,7 @@ const MovieTitle = styled.h3`
 
 const Info = styled.span`
   display: flex;
+  padding: 0 5px;
   justify-content: center;
   font-size: 0.9rem;
 `;
